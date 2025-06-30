@@ -1,0 +1,41 @@
+/* Grundlegendes Layout */
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: #333;
+  background-color: #fafafa;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+nav a {
+  color: #007acc;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+/* Hauptbereich */
+main {
+  margin-bottom: 40px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
