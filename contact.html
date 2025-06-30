@@ -4,6 +4,18 @@
   <meta charset="UTF-8" />
   <title>Kontakt</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Einfaches Styling für Dankeschön-Nachricht */
+    #thankyou-message {
+      display: none;
+      padding: 20px;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,16 +31,48 @@
 <p>Schreib mir gerne eine E-Mail:</p>
 <p><a href="mailto:lorenz@example.com">lorenz@example.com</a></p>
 
-<form action="https://formspree.io/f/xovwrlgl" method="POST">
+<form id="contact-form" action="https://formspree.io/f/xovwrlgl" method="POST">
   <label>Name:<br /><input type="text" name="name" required></label><br />
   <label>Email:<br /><input type="email" name="_replyto" required></label><br />
   <label>Nachricht:<br /><textarea name="message" required></textarea></label><br />
   <button type="submit">Senden</button>
 </form>
 
+<div id="thankyou-message">
+  <h2>Danke für deine Nachricht!</h2>
+  <p>Ich melde mich so schnell wie möglich bei dir.</p>
+</div>
+
 <footer>
   <p>&copy; 2025 Lorenz</p>
 </footer>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const thankYouMessage = document.getElementById('thankyou-message');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Verhindert normales Absenden
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        thankYouMessage.style.display = 'block';
+        form.reset();
+      } else {
+        alert('Oops! Beim Absenden ist ein Fehler aufgetreten.');
+      }
+    }).catch(error => {
+      alert('Oops! Beim Absenden ist ein Fehler aufgetreten.');
+    });
+  });
+</script>
 
 </body>
 </html>

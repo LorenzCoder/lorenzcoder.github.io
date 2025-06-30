@@ -4,8 +4,8 @@ body {
   max-width: 800px;
   margin: 40px auto;
   padding: 0 20px;
-  color: #333;
-  background-color: #fafafa;
+  color: #eee; /* helles Grau/Weiß für Text */
+  background-color: #121212; /* sehr dunkler, fast schwarzer Hintergrund */
   line-height: 1.6;
 }
 
@@ -16,7 +16,7 @@ nav {
 }
 
 nav a {
-  color: #007acc;
+  color: #66aaff; /* helles Blau für Links */
   text-decoration: none;
   margin-right: 12px;
 }
@@ -24,6 +24,7 @@ nav a {
 nav a:hover,
 nav a:focus {
   text-decoration: underline;
+  color: #99cfff; /* noch helleres Blau beim Hover */
 }
 
 /* Hauptbereich */
@@ -35,7 +36,7 @@ main {
 footer {
   text-align: center;
   font-size: 0.9em;
-  color: #666;
-  border-top: 1px solid #ddd;
+  color: #aaa; /* hellgrau für Footer */
+  border-top: 1px solid #333; /* dunklere Linie */
   padding-top: 15px;
 }
